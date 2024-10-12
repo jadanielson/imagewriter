@@ -126,7 +126,7 @@ tomorrowstr = "Tomorrow: "+ weather_codes[daily_weather_code[1]] + f" High: {dai
 
 iw.printstr(todaystr)
 iw.carriagereturn()
-iw.linefeed
+iw.linefeed()
 iw.printstr(tomorrowstr)
 iw.carriagereturn()
 iw.linefeed()
