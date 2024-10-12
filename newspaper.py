@@ -13,7 +13,7 @@ datestring = date.today().strftime("%d %B %Y")
 leftspaces = 28-(3+dayofweek.__len__())
 rightspaces = 80-52-(1+datestring.__len__())
 
-iw.linefeed(-3)
+iw.linefeed(-2)
 
 iw.boldface(True)
 iw.repeatchar(b'\xd6',80)
