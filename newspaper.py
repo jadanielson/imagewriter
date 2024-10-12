@@ -135,6 +135,7 @@ iw.linefeed(2)
 
 #### News Headlines
 import feedparser
+import time
 
 sectionheader("News Headlines")
 
@@ -148,6 +149,7 @@ for n in range(wapo.entries.__len__()):
     iw.printstr(wapo.entries[n].description)
     iw.carriagereturn()
     iw.linefeed(2)
+    time.sleep(1)
 
 
 #### End
