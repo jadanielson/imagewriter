@@ -8,6 +8,9 @@ class Imagewriter:
         #Include eighth data bit
         self.ser.write(b'\x1b\x5a\x00\x32') # Esc Z Ctrl-@ Space
 
+        #Auto linefeed when line full
+        self.ser.write(b'\x1b\x44\x20\x00') # Esc D Space Ctrl-@
+
     def linefeed(self, num = 1):
         if num > 0:
             self.ser.write(b'\x1bf')
