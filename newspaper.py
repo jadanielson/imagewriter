@@ -131,7 +131,23 @@ iw.printstr(tomorrowstr)
 iw.carriagereturn()
 iw.linefeed()
 
+iw.linefeed(2)
 
+#### News Headlines
+import feedparser
+
+sectionheader("News Headlines")
+
+wapo = feedparser.parse("https://feeds.washingtonpost.com/rss/national?itid=lk_inline_manual_31")
+for n in wapo.entries.__len__():
+    iw.boldface(True)
+    iw.printstr(wapo.entries[n].title)
+    iw.carriagereturn()
+    iw.linefeed()
+    iw.boldface(False)
+    iw.printstr(wapo.entries[n].description)
+    iw.carriagereturn()
+    iw.linefeed(2)
 
 
 #### End
