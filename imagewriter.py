@@ -6,7 +6,7 @@ class Imagewriter:
         self.ser = serial.Serial(device)
 
         #Include eighth data bit
-        self.ser.write(b'\x1b\x44\x00\x32') # Esc D Ctrl-@ Space
+        self.ser.write(b'\x1b\x5a\x00\x32') # Esc Z Ctrl-@ Space
 
     def linefeed(self, num = 1):
         if num > 0:
