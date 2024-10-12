@@ -13,6 +13,8 @@ datestring = date.today().strftime("%d %B %Y")
 leftspaces = 28-(3+dayofweek.__len__())
 rightspaces = 80-52-(1+datestring.__len__())
 
+iw.linefeed(-3)
+
 iw.boldface(True)
 iw.repeatchar(b'\xd6',80)
 iw.carriagereturn()
@@ -109,7 +111,29 @@ current = response.Current()
 current_temp = current.Variables(0).Value()
 current_weather_code = current.Variables(1).Value()
 
-currentstr = "Current: " + f"{current_temp:.1}" + "c " + weather_codes[current_weather_code]
+currentstr = "Current: " + f"{current_temp:.1f}" + "c " + weather_codes[current_weather_code]
 iw.printstr(currentstr)
 iw.carriagereturn()
 iw.linefeed()
+
+daily = response.Daily()
+daily_weather_code = daily.Variables(0).ValuesAsNumpy()
+daily_max = daily.Variables(1).ValuesAsNumpy()
+daily_min = daily.Variables(2).ValuesAsNumpy()
+
+todaystr = "Today: " + weather_codes[daily_weather_code[0]] + f" High: {daily_max[0]:.1f}c Low: {daily_min[0]:.1f}c" 
+tomorrowstr = "Tomorrow: "+ weather_codes[daily_weather_code[1]] + f" High: {daily_max[1]:.1f}c Low: {daily_min[1]:.1f}c" 
+
+iw.printstr(todaystr)
+iw.carriagereturn()
+iw.linefeed
+iw.printstr(tomorrowstr)
+iw.carriagereturn()
+iw.linefeed()
+
+
+
+
+#### End
+
+iw.formfeed()
