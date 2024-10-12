@@ -109,7 +109,7 @@ current = response.Current()
 current_temp = current.Variables(0).Value()
 current_weather_code = current.Variables(1).Value()
 
-currentstr = "Current: " + str(current_temp) + "c " + weather_codes[current_weather_code]
+currentstr = "Current: " + f"{current_temp:.1}" + "c " + weather_codes[current_weather_code]
 iw.printstr(currentstr)
 iw.carriagereturn()
 iw.linefeed()
