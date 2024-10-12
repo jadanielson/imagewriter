@@ -139,7 +139,7 @@ import feedparser
 sectionheader("News Headlines")
 
 wapo = feedparser.parse("https://feeds.washingtonpost.com/rss/national?itid=lk_inline_manual_31")
-for n in wapo.entries.__len__():
+for n in range(wapo.entries.__len__()):
     iw.boldface(True)
     iw.printstr(wapo.entries[n].title)
     iw.carriagereturn()
