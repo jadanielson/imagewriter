@@ -31,7 +31,7 @@ class Imagewriter:
         self.ser.write(char)
 
     def printstr(self, string):
-        self.ser.write(string.encode('ascii'))
+        self.ser.write(string.encode('ascii', 'replace'))
 
 
     # Clear line buffer
